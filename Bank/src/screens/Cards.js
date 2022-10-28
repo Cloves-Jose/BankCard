@@ -7,7 +7,9 @@ import ClientButton from "../components/ClientButton";
 
 export default () => {
 
-    
+    /**
+     * Lista os botões de informações
+     */
     _listButtons = () => {
         return (
             <FlatList
