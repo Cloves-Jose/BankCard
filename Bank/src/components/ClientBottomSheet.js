@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { View, Button, StyleSheet, Text, FlatList } from "react-native";
+import { View, Button, StyleSheet, Text} from "react-native";
 
 export default (props) => {
 
@@ -13,6 +13,9 @@ export default (props) => {
             </View>
             <View style={styles.subContainer}>
                 <Text style={styles.title}>{props.info}</Text>
+            </View>
+            <View style={styles.listContainer}>
+                {props.list}
             </View>
         </View>
     )
@@ -41,5 +44,10 @@ const styles = StyleSheet.create ({
     card: {
         marginTop: 20,
         alignItems: "center"
+    },
+    listContainer: {
+        paddingTop: 15,
+        paddingLeft: 30,
+        flex: 1
     }
 })
