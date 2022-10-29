@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     buttonTitle: {
         fontWeight: "bold",
         fontSize: 12,
-        paddingLeft: 5
+        paddingLeft: 5,
+        color: "#333"
     },
     subContainer: {
         flexDirection: "row",

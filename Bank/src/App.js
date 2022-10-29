@@ -15,10 +15,10 @@ export default class App extends Component{
             <SafeAreaView style={styles.container}>
                 <NavigationContainer>
                     <Tab.Navigator screenOptions={{ headerShown: false }}>
-                        {/* <Tab.Screen name="Home" component={Home}/>
-                        <Tab.Screen name="Cards" component={Cards}/> */}
+                        <Tab.Screen name="Home" component={Home}/>
+                        <Tab.Screen name="Cards" component={Cards}/>
                         <Tab.Screen name="History" component={History}/>
-                        {/* <Tab.Screen name="Profile" component={Profile}/> */}
+                        <Tab.Screen name="Profile" component={Profile}/>
                     </Tab.Navigator>
                 </NavigationContainer>
             </SafeAreaView>

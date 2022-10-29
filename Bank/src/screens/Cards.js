@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList, StyleSheet } from 'react-native'
+import { View, FlatList} from 'react-native'
 import ClienteHome from "../components/ClientHome";
 import ClientBottomSheet from "../components/ClientBottomSheet";
 import ClientCard from "../components/ClientCard";

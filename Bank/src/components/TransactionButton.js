@@ -3,13 +3,15 @@ import { View, Text, StyleSheet } from 'react-native';
 
 export default (props) => {
     
-    _valuesMod = (value) => {
+    /**
+     * Formatação condicional dos valores
+     */
+    _valuesCond = (value) => {
         let posNeg = value.split('');
-
         for(let i = 0; i < posNeg.length; i++){
             result = posNeg.indexOf("+") 
-            ? <Text style={{color: "#ef7a76"}}>{value}</Text> 
-            : <Text style={{color: "#18b376"}}>{value}</Text>
+            ? <Text style={styles.operations.sum}>{value}</Text> 
+            : <Text style={styles.operations.sub}>{value}</Text>
         }
         return result;
     }
@@ -21,7 +23,7 @@ export default (props) => {
                 <Text style={styles.subTitle}>{props.dateTime}</Text>
             </View>
             <View style={styles.values}>
-                {_valuesMod(props.value)}
+                {_valuesCond(props.value)}
             </View>
         </View>
     )
@@ -47,7 +49,18 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: "#b6b7b9"
     },
+    operations: {
+        sum: {
+            color: "#ef7a76",
+            fontWeight: "bold"
+        },
+        sub: {
+            color: "#18b376",
+            fontWeight: "bold"
+        }
+
+    },
     values: {
-        marginLeft: 90
+        marginLeft: 100
     }
 })
