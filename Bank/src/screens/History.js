@@ -1,11 +1,15 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, StyleSheet } from "react-native";
 import ClientHome from "../components/ClientHome";
 import ClientBottomSheet from "../components/ClientBottomSheet";
-import TransactionButton from "../components/TransactionButton";
+import TransactionInfo from "../components/TransactionInfo";
+import globalStyles from "../../styles/GlobalStyles";
 
 export default () => {
 
+    /**
+     * Lista de transações
+     */
     _listTransactions = () => {
         return (
             <FlatList
@@ -17,11 +21,11 @@ export default () => {
                     {key: '4', title: 'Gym', dateTime: "18:27", value: "-3.29$"},
                     {key: '5', title: 'Online Store', dateTime: "16:33", value: "-347.00$"}
                 ]}
-                renderItem={({item}) => {
-                    <View>
-                        <TransactionButton title={item.title} dateTime={item.dateTime} value={item.value}/>
+                renderItem={({item}) => 
+                    <View style={styles.containerList}>
+                        <TransactionInfo title={item.title} dateTime={item.dateTime} value={item.value}/>
                     </View>
-                }}
+                }
             />
         )
     }
@@ -29,11 +33,19 @@ export default () => {
     return (
         <>
             <ClientHome name="Linda" plan="PLUS" value="513.89$" subtitle="Your balance">
-                <ClientBottomSheet 
-                title="Transactions">
+                <ClientBottomSheet>
+                    <View style={globalStyles.subContainer}>
+                        <Text style={globalStyles.title}>Transaction</Text>
+                    </View>
                     {this._listTransactions()}
                 </ClientBottomSheet>
             </ClientHome>
         </>
     )
 }
+
+const styles = StyleSheet.create({
+    containerList: {
+        alignItems: 'center'
+    }
+})

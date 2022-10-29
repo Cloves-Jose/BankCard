@@ -34,10 +34,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: "#f2f2fa",
-        width: 300,
+        width: 350,
         height: 50,
         borderRadius: 30,
-        paddingLeft: 20
+        paddingLeft: 20,
+        margin: 5,
+        justifyContent: 'space-between'
     },
     title: {
         fontWeight: 'bold',
@@ -61,6 +63,6 @@ const styles = StyleSheet.create({
 
     },
     values: {
-        marginLeft: 100
+        marginRight: 20
     }
 })

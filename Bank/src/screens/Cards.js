@@ -1,11 +1,38 @@
 import React from "react";
-import { View, FlatList} from 'react-native'
+import { View, FlatList, Text, StyleSheet} from 'react-native'
 import ClienteHome from "../components/ClientHome";
 import ClientBottomSheet from "../components/ClientBottomSheet";
 import ClientCard from "../components/ClientCard";
 import ClientButton from "../components/ClientButton";
+import globalStyles from '../../styles/GlobalStyles';
 
 export default () => {
+
+    /**
+     * Informações do cartão de crédito
+     */
+    _cardInfo = (info) => {
+        return (
+            <>
+                <View style={styles.cardInfo}>
+                    <Text style={styles.cardName}>{info.cardName}</Text>
+                    <Text style={styles.cardFont}>{info.cardPlan}</Text>
+                    <Text style={styles.number}>{info.number}</Text>
+                </View>
+                <View style={styles.subCont}>
+                    <View style={styles.cardHolder}>
+                        <Text style={styles.cardFont}>CARDHOLDER</Text>
+                        <Text style={styles.nameClient}>{info.nameClient}</Text>
+                    </View>
+                    <View style={styles.cardExpires}>
+                        <Text style={styles.cardFont}>EXPIRE</Text>
+                        <Text style={styles.cardDate}>{info.dateExpire}</Text>
+                    </View>
+                </View>
+            
+            </>
+        )
+    }
 
     /**
      * Lista os botões de informações
@@ -33,20 +60,79 @@ export default () => {
     return (
         <>
             <ClienteHome name="Linda" plan="PLUS" value="513.89$" subtitle="Your balance">
-                <ClientBottomSheet 
-                    title="Cards" 
-                    info="Card Info"
-                    list={this._listButtons()}
-                    >
-                    <ClientCard name="CARDNAME" 
-                        debitName="DEBIT CARD" 
-                        number="**** **** **** 4265"
-                        cardHolder="CARDHOLDER"
-                        nameClient="Linda Thompson"
-                        expire="EXPIRE"
-                        dateExpire="12/22"/>
+                <ClientBottomSheet>
+                        <View style={globalStyles.subContainer}>
+                            <Text style={globalStyles.title}>Cards</Text>
+                        </View>
+                        <View style={styles.card}>
+                            <ClientCard>
+                                {this._cardInfo({
+                                    cardName: "CARDNAME", 
+                                    cardPlan: "DEBIT CARD",
+                                    number: "**** **** **** 4265",
+                                    nameClient: "Linda Thompson",
+                                    dateExpire: "12/22"
+                                    })}
+                            </ClientCard>
+                        </View>
+                        <View style={globalStyles.subContainer}>
+                            <Text style={globalStyles.title}>Card Info</Text>
+                        </View>
+                        <View style={styles.listContainer}>
+                            {this._listButtons()}
+                        </View>
                 </ClientBottomSheet>
             </ClienteHome>
         </>
     )
 }
+
+const styles = StyleSheet.create({
+    card: {
+        alignItems: "center"
+    },
+    listContainer: {
+        paddingLeft: 30,
+        flex: 1
+    },
+    cardInfo: {
+        paddingLeft: 30,
+        paddingTop: 30
+    },
+    cardName: {
+        color: "#fff",
+        fontWeight: '800'
+    },
+    cardFont: {
+        fontSize: 9,
+        color: '#6fd6a5',
+        fontWeight: "900"
+    },
+    number: {
+        marginTop: 20,
+        fontSize: 20,
+        fontWeight: "bold",
+        color: '#fff',
+        letterSpacing: 2
+    },
+    subCont: {
+        flexDirection: "row"
+    },
+    cardHolder: {
+        paddingLeft: 30,
+        marginTop: 30
+    },
+    nameClient: {
+        color: '#fff',
+        fontWeight: "900"
+    },
+    cardExpires: {
+        paddingTop: 30,
+        marginLeft: 45
+    },
+    cardDate: {
+        color: "#fff",
+        fontWeight: "900",
+        fontSize: 13
+    }
+})
