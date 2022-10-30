@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
-import ClientBottomSheet from './ClientBottomSheet';
+import LinearGradient from 'react-native-linear-gradient';
 import globalStyles from '../../styles/GlobalStyles'
 
 export default (props) => {
     return (
-        <View style={styles.container}>
+        <LinearGradient colors={['#03b072', '#00b886', '#00b487']} style={styles.container}>
             <View style={styles.subContainer}>
                 <View style={styles.rowContainer}>
                     <View style={styles.subContainer}>
@@ -23,7 +23,7 @@ export default (props) => {
                 <Text style={styles.subTitle}>{props.subtitle}</Text>
             </View>
             {props.children}
-        </View>
+        </LinearGradient>
     )
 }
 
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop : 15,
+        color: ['#00b475', '#00b781', '#00b27e'],
         backgroundColor:'#00b781'
     },
     image: {
