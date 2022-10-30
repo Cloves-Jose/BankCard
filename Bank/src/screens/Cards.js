@@ -10,6 +10,22 @@ import globalStyles from '../../styles/GlobalStyles';
 export default () => {
 
     /**
+     * Verso do cartão
+     */
+    _backCard = (info) => {
+        return (
+            <>
+                <View style={styles.containerCard}>
+                    <View style={styles.backCard}></View>
+                </View>
+                <View style={styles.subCard}>
+                    <Text style={globalStyles.planType}>{info.plan}</Text>
+                </View>
+            </>
+        )
+    }
+
+    /**
      * Swipe do cartão de crédito
      */
     _cardSwipe = (info) => {
@@ -24,9 +40,9 @@ export default () => {
                             </View>
                             <View style={{marginLeft: 2.5}}>
                                 <ClientCard>
-                                    <View>
-                                        <View></View>
-                                    </View>
+                                    {this._backCard({
+                                        plan: "PLUS"
+                                    })}
                                 </ClientCard>
                             </View>
                     </SwiperFlatList>
@@ -163,10 +179,23 @@ const styles = StyleSheet.create({
     cardSwipe: {
         margin: 5
     },
+    containerCard: {
+        alignItems: "center",
+    },
     backCard: {
-        marginTop: 15,
+        marginTop: 20,
+        width: 330,
+        height: 45,
+        backgroundColor: "#DCDCDC"
+    },
+    subCard: {
+        marginTop: 20,
+        marginLeft: 30,
+        backgroundColor: '#fe6770',
         width: 50,
-        height: 50,
-        backgroundColor: "#fff"
-    }
+        height: 20,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 10
+    },
 })

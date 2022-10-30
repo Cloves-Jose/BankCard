@@ -29,4 +29,13 @@ module.exports = StyleSheet.create({
         paddingLeft: 5,
         color: "#333"
     },
+    planType: {
+        color: '#fff',
+        fontSize: 11,
+        fontWeight: '500',
+        backgroundColor: '#fe6770',
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderRadius: 8
+    },
 })

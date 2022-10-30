@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import ClientBottomSheet from './ClientBottomSheet';
+import globalStyles from '../../styles/GlobalStyles'
 
 export default (props) => {
     return (
@@ -9,7 +10,7 @@ export default (props) => {
                 <View style={styles.rowContainer}>
                     <View style={styles.subContainer}>
                         <Text style={styles.nameClient}>{props.name}</Text>
-                        <Text style={styles.planType}>{props.plan}</Text>
+                        <Text style={globalStyles.planType}>{props.plan}</Text>
                     </View>
                     <Image
                         style={styles.imageClient}
@@ -47,15 +48,6 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 25,
         fontWeight: '500'
-    },
-    planType: {
-        color: '#fff',
-        fontSize: 11,
-        fontWeight: '500',
-        backgroundColor: '#fe6770',
-        paddingLeft: 10,
-        paddingRight: 10,
-        borderRadius: 8
     },
     imageClient: {
         width: 50,
