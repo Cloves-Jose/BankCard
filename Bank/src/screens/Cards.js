@@ -1,5 +1,6 @@
 import React from "react";
-import { View, FlatList, Text, StyleSheet} from 'react-native'
+import { View, FlatList, Text, StyleSheet,} from 'react-native'
+import { SwiperFlatList } from 'react-native-swiper-flatlist';
 import ClienteHome from "../components/ClientHome";
 import ClientBottomSheet from "../components/ClientBottomSheet";
 import ClientCard from "../components/ClientCard";
@@ -7,6 +8,32 @@ import ClientButton from "../components/ClientButton";
 import globalStyles from '../../styles/GlobalStyles';
 
 export default () => {
+
+    /**
+     * Swipe do cartão de crédito
+     */
+    _cardSwipe = (info) => {
+        return (
+            <>
+                <View style={styles.card}>
+                    <SwiperFlatList index={0} style={styles.cardSwipe}>
+                            <View style={{marginRight: 2.5}}>
+                                <ClientCard>
+                                    {this._cardInfo(info)}
+                                </ClientCard>
+                            </View>
+                            <View style={{marginLeft: 2.5}}>
+                                <ClientCard>
+                                    <View>
+                                        <View></View>
+                                    </View>
+                                </ClientCard>
+                            </View>
+                    </SwiperFlatList>
+                </View>
+            </>
+        )
+    }
 
     /**
      * Informações do cartão de crédito
@@ -64,17 +91,13 @@ export default () => {
                         <View style={globalStyles.subContainer}>
                             <Text style={globalStyles.title}>Cards</Text>
                         </View>
-                        <View style={styles.card}>
-                            <ClientCard>
-                                {this._cardInfo({
-                                    cardName: "CARDNAME", 
-                                    cardPlan: "DEBIT CARD",
-                                    number: "**** **** **** 4265",
-                                    nameClient: "Linda Thompson",
-                                    dateExpire: "12/22"
-                                    })}
-                            </ClientCard>
-                        </View>
+                        {this._cardSwipe({
+                            cardName: "CARDNAME",
+                            cardPlan: "DEBIT CARD",
+                            number: "**** **** **** 4265",
+                            nameClient: "Linda Thompson",
+                            dateExpire: "12/22"
+                        })}
                         <View style={globalStyles.subContainer}>
                             <Text style={globalStyles.title}>Card Info</Text>
                         </View>
@@ -89,7 +112,9 @@ export default () => {
 
 const styles = StyleSheet.create({
     card: {
-        alignItems: "center"
+        alignItems: "center",
+        marginRight: 5,
+        marginLeft: 5
     },
     listContainer: {
         paddingLeft: 30,
@@ -134,5 +159,14 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontWeight: "900",
         fontSize: 13
+    },
+    cardSwipe: {
+        margin: 5
+    },
+    backCard: {
+        marginTop: 15,
+        width: 50,
+        height: 50,
+        backgroundColor: "#fff"
     }
 })
