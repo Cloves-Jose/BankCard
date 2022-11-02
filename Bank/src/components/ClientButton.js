@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome' 
+import { Icon } from '@rneui/themed';
 import globalStyles from '../../styles/GlobalStyles';
 
 

@@ -1,0 +1,23 @@
+{
+    "cardInfo": {
+        "cardHolder": "CARDHOLDER",
+        "expire": "EXPIRE",
+        "plan": "PLUS"
+    },
+    "buttonScreen": {
+        "travelCard": "Travel Card",
+        "onlinePayment": "Online Payment",
+        "fisicPayment": "Fisic Payment",
+        "health": "Health",
+        "tips": "Tips"
+    },
+    "clientData": {
+        "cardName": "CARDNAME",
+        "cardPlan": "DEBIT CARD",
+        "number": "**** **** **** 4265",
+        "nameClient": "Linda Thompson",
+        "dataExpire": "12/22"
+    }
+}
+
+

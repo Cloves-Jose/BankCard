@@ -38,4 +38,8 @@ module.exports = StyleSheet.create({
         paddingRight: 10,
         borderRadius: 8
     },
+    tabContainer: {
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+    }
 })

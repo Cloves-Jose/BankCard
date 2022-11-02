@@ -4,8 +4,24 @@ import ClientHome from "../components/ClientHome";
 import ClientBottomSheet from "../components/ClientBottomSheet";
 import TransactionInfo from "../components/TransactionInfo";
 import globalStyles from "../../styles/GlobalStyles";
+import transac from '../../data/transaction';
 
 export default () => {
+
+    /**
+     * Agrupando transações de acordo com a 
+     * data em que aconteceram
+     */
+    // _groupTransaction = (value, key) => {
+    //     value.reduce((data, transaction) => {
+    //         if(!data[transaction[key]]) {
+    //             data[transaction[key]] = [];
+    //         }
+    //         data[transaction[key]].push(transaction)
+
+    //         return transaction;
+    //     }, {})
+    // }
 
     /**
      * Lista de transações
@@ -14,16 +30,10 @@ export default () => {
         return (
             <FlatList
             showsVerticalScrollIndicator={false}
-                data={[
-                    {key: '1', title: 'John Peterson', dateTime: "Just now", value: "+50.00$"},
-                    {key: '2', title: 'Clark Jackson', dateTime: "10:32", value: "-46.70$"},
-                    {key: '3', title: 'Taxi', dateTime: "09:12", value: "-6.90$"},
-                    {key: '4', title: 'Gym', dateTime: "18:27", value: "-3.29$"},
-                    {key: '5', title: 'Online Store', dateTime: "16:33", value: "-347.00$"}
-                ]}
+                data={transac}
                 renderItem={({item}) => 
                     <View style={styles.containerList}>
-                        <TransactionInfo title={item.title} dateTime={item.dateTime} value={item.value}/>
+                        <TransactionInfo title={item.name} dateTime={item.dateTime} value={item.value}/>
                     </View>
                 }
             />
@@ -37,7 +47,7 @@ export default () => {
                     <View style={globalStyles.subContainer}>
                         <Text style={globalStyles.title}>Transaction</Text>
                     </View>
-                    {this._listTransactions()}
+                    {_listTransactions()}
                 </ClientBottomSheet>
             </ClientHome>
         </>

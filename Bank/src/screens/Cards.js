@@ -40,7 +40,7 @@ export default () => {
                             </View>
                             <View style={{marginLeft: 2.5}}>
                                 <ClientCard>
-                                    {this._backCard({
+                                    {_backCard({
                                         plan: "PLUS"
                                     })}
                                 </ClientCard>
@@ -107,7 +107,7 @@ export default () => {
                         <View style={globalStyles.subContainer}>
                             <Text style={globalStyles.title}>Cards</Text>
                         </View>
-                        {this._cardSwipe({
+                        {_cardSwipe({
                             cardName: "CARDNAME",
                             cardPlan: "DEBIT CARD",
                             number: "**** **** **** 4265",
@@ -118,7 +118,7 @@ export default () => {
                             <Text style={globalStyles.title}>Card Info</Text>
                         </View>
                         <View style={styles.listContainer}>
-                            {this._listButtons()}
+                            {_listButtons()}
                         </View>
                 </ClientBottomSheet>
             </ClienteHome>
@@ -129,16 +129,16 @@ export default () => {
 const styles = StyleSheet.create({
     card: {
         alignItems: "center",
-        marginRight: 5,
-        marginLeft: 5
+        marginRight: "1.3%",
+        marginLeft: "1.3%"
     },
     listContainer: {
-        paddingLeft: 30,
+        paddingLeft: "8%",
         flex: 1
     },
     cardInfo: {
-        paddingLeft: 30,
-        paddingTop: 30
+        paddingLeft: "8%",
+        paddingTop: "8%"
     },
     cardName: {
         color: "#fff",
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
         fontWeight: "900"
     },
     number: {
-        marginTop: 20,
+        marginTop: "8%",
         fontSize: 20,
         fontWeight: "bold",
         color: '#fff',
@@ -160,16 +160,16 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     cardHolder: {
-        paddingLeft: 30,
-        marginTop: 30
+        paddingLeft: "8%",
+        marginTop: "8%"
     },
     nameClient: {
         color: '#fff',
         fontWeight: "900"
     },
     cardExpires: {
-        paddingTop: 30,
-        marginLeft: 45
+        paddingTop: "8%",
+        marginLeft: "20%"
     },
     cardDate: {
         color: "#fff",
@@ -177,23 +177,23 @@ const styles = StyleSheet.create({
         fontSize: 13
     },
     cardSwipe: {
-        margin: 5
+        margin: "2%"
     },
     containerCard: {
         alignItems: "center",
     },
     backCard: {
-        marginTop: 20,
-        width: 330,
-        height: 45,
+        marginTop: "8%",
+        width: "100%",
+        height: "40%",
         backgroundColor: "#DCDCDC"
     },
     subCard: {
-        marginTop: 20,
-        marginLeft: 30,
+        marginTop: "2%",
+        marginLeft: "10%",
         backgroundColor: '#fe6770',
-        width: 50,
-        height: 20,
+        width: "20%",
+        height: "10%",
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 10
