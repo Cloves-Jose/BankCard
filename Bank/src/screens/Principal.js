@@ -6,7 +6,14 @@ export default () => {
 
     return (
         <View style={styles.container}>
-            <PrincipalButton/>
+            <PrincipalButton 
+                first="PIX"
+                second="Transactions"
+                third="Cards"
+                fourth="Payment"
+                fifth="Gift cards"
+                sixth="Deposit"
+                />
         </View>
     )
 }

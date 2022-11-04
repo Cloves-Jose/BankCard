@@ -13,10 +13,13 @@ const Tab = createMaterialTopTabNavigator();
 export default () => {
 
 
-    
+    /**
+     * Navegação entre abas superior
+     */
     _tabNavigation = () => {
         return (
             <Tab.Navigator 
+            initialRouteName="Principal"
             style={[globalStyles.tabContainer]}
             screenOptions={tabStyles}>
                 <Tab.Screen name="Principal" component={Principal} />
@@ -46,10 +49,6 @@ const tabStyles = {
         fontSize: 10,
         paddingLeft: 5,
         color: "#333",
-    },
-    tabBarIndicatorStyle: {
-        width: "10%",
-        justifyContent: "center",
-    },
+    }
 }
 

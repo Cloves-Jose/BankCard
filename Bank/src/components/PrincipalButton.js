@@ -12,7 +12,7 @@ export default (props) => {
                 <Icon name={props.icon} size={12}/>
                 <TouchableHighlight>
                     <View>
-                        <Text style={globalStyles.buttonTitle}>Pix/QR Code</Text>
+                        <Text style={globalStyles.buttonTitle}>{props.first}</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -20,7 +20,7 @@ export default (props) => {
                 <Icon name={props.icon} size={12}/>
                 <TouchableHighlight>
                     <View>
-                        <Text style={globalStyles.buttonTitle}>Transactions</Text>
+                        <Text style={globalStyles.buttonTitle}>{props.second}</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -28,7 +28,7 @@ export default (props) => {
                 <Icon name={props.icon} size={12}/>
                 <TouchableHighlight>
                     <View>
-                        <Text style={globalStyles.buttonTitle}>Cards</Text>
+                        <Text style={globalStyles.buttonTitle}>{props.third}</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -36,7 +36,7 @@ export default (props) => {
                 <Icon name={props.icon} size={12}/>
                 <TouchableHighlight>
                     <View>
-                        <Text style={globalStyles.buttonTitle}>Payment</Text>
+                        <Text style={globalStyles.buttonTitle}>{props.fourth}</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -44,7 +44,7 @@ export default (props) => {
                 <Icon name={props.icon} size={12}/>
                 <TouchableHighlight>
                     <View>
-                        <Text style={globalStyles.buttonTitle}>Gift Cards</Text>
+                        <Text style={globalStyles.buttonTitle}>{props.fifth}</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -52,7 +52,7 @@ export default (props) => {
                 <Icon name={props.icon} size={12}/>
                 <TouchableHighlight>
                     <View>
-                        <Text style={globalStyles.buttonTitle}>Deposit</Text>
+                        <Text style={globalStyles.buttonTitle}>{props.sixth}</Text>
                     </View>
                 </TouchableHighlight>
             </View>

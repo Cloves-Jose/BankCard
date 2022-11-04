@@ -85,7 +85,7 @@ export default () => {
             <FlatList
                 showsVerticalScrollIndicator={false}
                     data={[
-                        {key: '1', title: 'Travel Card'},
+                        {key: '1', title: 'Travel Card', icon: 'airplane'},
                         {key: '2', title: 'Online Payment'},
                         {key: '3', title: 'Fisic Payment'},
                         {key: '4', title: 'Health'},

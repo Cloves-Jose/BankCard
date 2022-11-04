@@ -14,7 +14,9 @@ export default class App extends Component{
         return(
             <SafeAreaView style={styles.container}>
                 <NavigationContainer>
-                    <Tab.Navigator screenOptions={{ headerShown: false }}>
+                    <Tab.Navigator 
+                    screenOptions={{ headerShown: false }}
+                    initialRouteName="Home">
                         <Tab.Screen name="Home" component={Home}/>
                         <Tab.Screen name="Cards" component={Cards}/>
                         <Tab.Screen name="History" component={History}/>
