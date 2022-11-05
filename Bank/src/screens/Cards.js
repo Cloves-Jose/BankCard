@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList, Text, StyleSheet,} from 'react-native'
+import { View, FlatList, Text, StyleSheet, TouchableHighlight} from 'react-native'
 import { SwiperFlatList } from 'react-native-swiper-flatlist';
 import ClienteHome from "../components/ClientHome";
 import ClientBottomSheet from "../components/ClientBottomSheet";
@@ -7,7 +7,7 @@ import ClientCard from "../components/ClientCard";
 import ClientButton from "../components/ClientButton";
 import globalStyles from '../../styles/GlobalStyles';
 
-export default () => {
+export default (props) => {
 
     /**
      * Verso do cartão
@@ -85,11 +85,11 @@ export default () => {
             <FlatList
                 showsVerticalScrollIndicator={false}
                     data={[
-                        {key: '1', title: 'Travel Card', icon: 'airplane'},
-                        {key: '2', title: 'Online Payment'},
-                        {key: '3', title: 'Fisic Payment'},
-                        {key: '4', title: 'Health'},
-                        {key: '5', title: 'Tips'}
+                        {key: '1', title: 'Travel Card', icon: 'flight'},
+                        {key: '2', title: 'Online Payment', icon: 'wifi'},
+                        {key: '3', title: 'Fisic Payment', icon: 'payments'},
+                        {key: '4', title: 'Health', icon: 'spa'},
+                        {key: '5', title: 'Tips', icon: 'payment'}
                     ]}
                     renderItem={({item}) => 
                     <View style={{margin: 5}}>

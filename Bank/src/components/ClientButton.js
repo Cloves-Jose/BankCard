@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 import { Icon } from '@rneui/themed';
 import globalStyles from '../../styles/GlobalStyles';
 
-
 export default (props) => {
     return (
         <View>
@@ -23,5 +22,6 @@ const styles = StyleSheet.create({
     subContainer: {
         flexDirection: "row",
         justifyContent: "center",
+        alignItems: "center"
     }
 })

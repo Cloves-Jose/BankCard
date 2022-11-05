@@ -9,21 +9,6 @@ import transac from '../../data/transaction';
 export default () => {
 
     /**
-     * Agrupando transações de acordo com a 
-     * data em que aconteceram
-     */
-    // _groupTransaction = (value, key) => {
-    //     value.reduce((data, transaction) => {
-    //         if(!data[transaction[key]]) {
-    //             data[transaction[key]] = [];
-    //         }
-    //         data[transaction[key]].push(transaction)
-
-    //         return transaction;
-    //     }, {})
-    // }
-
-    /**
      * Lista de transações
      */
     _listTransactions = () => {

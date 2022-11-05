@@ -6,13 +6,15 @@ module.exports = StyleSheet.create({
         fontWeight: "900",
         fontSize: 20,
         color: '#333',
-        marginBottom: 20
+        marginBottom: 20,
+        fontFamily: 'Montserrat-Bold'
     },
     subContainer: {
         alignItems: "flex-start",
         justifyContent: "flex-start",
         paddingLeft: 25,
         paddingTop: 20,
+        fontFamily: 'Montserrat-Bold'
     },
     button: {
         backgroundColor: '#f2f2fa',
